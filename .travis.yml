@@ -1,3 +1,5 @@
+before_install:
+- gem install mime-types -v 3.2016.0521
 language: ruby
 rvm:
  - 2.2
@@ -5,3 +7,6 @@ rvm:
  - rbx-2
 # uncomment and edit the following line if your project needs to run something other than `rake`:
 # # script: bundle exec rspec spec
+#  prevent Travis CI from resetting your working directory and deleting all changes made during the build (git stash --all)
+deploy:
+  skip_cleanup: true
