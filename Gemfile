@@ -41,6 +41,8 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5'
   gem 'factory_girl'
   gem 'ffaker'
+  #Static code analyzer
+  gem 'rubocop', '~> 0.43.0', require: false
 end
 
 group :development do
@@ -50,4 +52,3 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
-
