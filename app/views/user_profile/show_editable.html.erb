@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1> Hallo <%= @user.username %> <h1>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h3> Personal information <%= link_to 'Edit', edit_user_registration_path, class: "btn btn-xs bottom-buffer btn-warning" %>  </h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <p><strong>Username: </strong> <%= @user.username %></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <p><strong>First name: </strong> <%= @user.first_name %></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <p><strong>Last name: </strong> <%= @user.last_name %></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <p><strong>E-Mail: </strong> <%= @user.email %></p>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h3> Restrictions </h3>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h3> Allergies </h3>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h3> Food Rating </h3>
+    </div>
+  </div>
+</div>
+
