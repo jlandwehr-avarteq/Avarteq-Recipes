@@ -32,6 +32,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Unicorn as the app server
 # gem 'unicorn'
 
+#Authentification
+gem 'devise'
+
+#Reset database
+gem 'pgreset', '~> 0.1.1'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
