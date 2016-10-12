@@ -2,7 +2,7 @@ language: ruby
 rvm:
  - 2.2
  - jruby
- #- rbx-head
+ - rbx
 sudo: false
 # uncomment and edit the following line if your project needs to run something other than `rake`:
 # # script: bundle exec rspec spec
