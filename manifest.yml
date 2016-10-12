@@ -1,0 +1,23 @@
+---
+buildpack: ruby_buildpack
+
+path: .
+
+services:
+  - staging_postgres
+
+applications:
+
+- name: recipes_staging
+
+  memory: 256M
+
+  instances: 1
+
+  host: recipes_staging
+
+  domain: aws.ie.a9sapp.eu
+
+env:
+
+  RAILS_ENV: test
