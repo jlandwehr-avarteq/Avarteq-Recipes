@@ -1,8 +1,8 @@
 language: ruby
 rvm:
- - 2.3
+ - 2.2
  - jruby
- - rbx-3.48
+ - rbx-3.48 --binary
 # uncomment and edit the following line if your project needs to run something other than `rake`:
 # # script: bundle exec rspec spec
 #  prevent Travis CI from resetting your working directory and deleting all changes made during the build (git stash --all)
