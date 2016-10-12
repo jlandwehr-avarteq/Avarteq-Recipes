@@ -4,17 +4,17 @@ buildpack: ruby_buildpack
 path: .
 
 services:
-  - staging_postgres
+  - production_postgres
 
 applications:
 
-- name: recipes_staging
+- name: recipes_production
 
   memory: 256M
 
   instances: 1
 
-  host: recipes_staging
+  host: recipes_production
 
   domain: aws.ie.a9sapp.eu
 
