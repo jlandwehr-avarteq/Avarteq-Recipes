@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'user_profile/show_to_others'
+  get 'user_profile/show_to_others/:id', to: 'user_profile#show_to_others'
 
   get 'user_profile/show_editable'
 

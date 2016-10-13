@@ -1,2 +1,46 @@
-<h1>UserProfile#show_to_others</h1>
-<p>Find me in app/views/user_profile/show_to_others.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h3> <%= @user.username.capitalize %>'s user information </h3>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h3> <%= @user.username.capitalize %>'s personal information </h3>
+    </div>
+    <div class="col-md-12">
+      <%= render 'show_user' %>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h3> <%= @user.username.capitalize %>'s food restrictions </h3>
+      <!-- Display user's restriction -->
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h3> <%= @user.username.capitalize %>'s food allergies </h3>
+      <!-- Display user's allergies -->
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h3> <%= @user.username.capitalize %>'s food rating</h3>
+      <!-- Display user's food rating results-->
+    </div>
+  </div>
+</div>
+
