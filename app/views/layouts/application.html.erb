@@ -24,15 +24,15 @@
               </div>
               <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                  <li class="<%= is_active?(root_path)%>"><a href="#contact">Home</a></li>
-                  <li><a href="#">Recipes</a></li>
-                  <li><a href="#about">Friends</a></li>
-                  <li><a href="#contact">Groups</a></li>
-                  <li><a href="#contact">My Recipes</a></li>
+                  <li class="<%= is_active?(root_path)%>"> <%= link_to I18n.t 'Home', root_path %></li>
+                  <li>Recipes</li>
+                  <li>Friends</li>
+                  <li>Groups</li>
+                  <li>My Recipes</li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                  <li><a href="#about">Profile</a></li>
-                  <li><%= render 'devise/menu/login_items' %></li>
+                  <li>Profile</li>
+                  <%= render 'devise/menu/login_items' %>
                 </ul>
               </div><!--/.nav-collapse -->
             </div>
