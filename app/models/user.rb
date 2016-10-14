@@ -1,8 +1,18 @@
 class User < ActiveRecord::Base
+  #allows to create friendrequest
+  # @mac sends a friend request to @dee
+  #@mac.friend_request(@dee)
+  # @dee can accept the friend request
+  #@dee.accept_request(@mac)
+  # @dee can also decline the friend request
+  #@dee.decline_request(@mac)
+  has_friendship
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+    :recoverable, :rememberable, :trackable, :validatable
+
 
   validates :username, presence: true
   validates :first_name, presence: true

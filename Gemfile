@@ -38,8 +38,8 @@ gem 'rails-i18n', '~> 4.0.0'
 #Authentification
 gem 'devise'
 
-#Reset database
-gem 'pgreset', '~> 0.1.1'
+# Friendship funcitonality: e.g. send, accept, decline friendship request
+gem 'has_friendship'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -50,6 +50,8 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5'
   gem 'factory_girl_rails'
   gem 'ffaker'
+  #Reset database
+  gem 'pgreset', '~> 0.1.1'
 end
 
 group :development do

@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1> My friends</h1>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>I18n.t 'Username'</th>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Info</th>
+        <th>Unfriend</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @friends.each do |friend| %>
+        <tr>
+          <td><%= friend.username %></td>
+          <td><%= friend.first_name %></td>
+          <td><%= friend.last_name %></td>
+          <td></td>
+          <td><%= render_unfriend_button(friend) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
