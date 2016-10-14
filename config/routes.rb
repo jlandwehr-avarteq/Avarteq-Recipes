@@ -5,10 +5,16 @@ Rails.application.routes.draw do
 
   root 'page#welcome'
 
-  get 'friendships/friend/:id', to: 'friendships#friend', as: 'friend'
+  get 'friend/:id', to: 'friendships#friend', as: 'friend'
 
-  get 'friendships/friends', to: 'friendships#friends'
+  get 'friends', to: 'friendships#friends'
 
-  get 'friendships/unfriend/:id', to: 'friendships#unfriend', as: 'unfriend'
+  get 'unfriend/:id', to: 'friendships#unfriend', as: 'unfriend'
+
+  post "add_friend", to: "friendships#add_friend"
+
+  get 'accept_friend/:id', to: "friendships#accept_friend", as:'accept_friend'
+
+  get 'decline_friend/:id', to: "friendships#decline_friend", as:'decline_friend'
 
 end

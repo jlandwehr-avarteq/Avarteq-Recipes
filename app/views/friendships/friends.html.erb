@@ -30,3 +30,70 @@
     </tbody>
   </table>
 </div>
+
+<%= render 'add_friend' %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Pending friend requests</h1>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>I18n.t 'Username'</th>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Info</th>
+        <th>Accept</th>
+         <th>Deny</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% current_user.pending_friends.each do |friend| %>
+        <tr>
+          <td><%= friend.username %></td>
+          <td><%= friend.first_name %></td>
+          <td><%= friend.last_name %></td>
+          <td><%= link_to 'Accept', accept_friend_path(friend) %></td>
+          <td><%= link_to 'Decline', decline_friend_path(friend) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Your friend requests</h1>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>I18n.t 'Username'</th>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Info</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% current_user.requested_friends.each do |friend| %>
+        <tr>
+          <td><%= friend.username %></td>
+          <td><%= friend.first_name %></td>
+          <td><%= friend.last_name %></td>
+          <td></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+

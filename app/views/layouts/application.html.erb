@@ -27,6 +27,7 @@
                   <li class="<%= is_active?(root_path)%>"> <%= link_to t('header.home'), root_path %></li>
                   <li> <%= t('header.recipes') %> </li>
                   <li class="<%= is_active?(friendships_friends_path)%>"> <%= link_to t('header.friends'), friendships_friends_path %></li>
+                  <li class="<%= is_active?(friends_path)%>"> <%= link_to 'Friends', friends_path %></li>
                   <li><%= t('header.groups') %> </li>
                   <li><%= t('header.my_recipes') %> </li>
                 </ul>
