@@ -24,11 +24,11 @@
               </div>
               <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                  <li class="<%= is_active?(root_path)%>"> <%= link_to 'Home', root_path %></li>
-                  <li>Recipes</li>
-                  <li>Friends</li>
-                  <li>Groups</li>
-                  <li>My Recipes</li>
+                  <li class="<%= is_active?(root_path)%>"> <%= link_to t('header.home'), root_path %></li>
+                  <li> <%= t('header.recipes') %> </li>
+                  <li><%= t('header.friends') %> </li>
+                  <li><%= t('header.groups') %> </li>
+                  <li><%= t('header.my_recipes') %> </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                   <li><%= render 'devise/menu/user_profile' %></li>

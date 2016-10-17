@@ -22,5 +22,10 @@ module AvarteqRecipes
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    #supported languages for this web application: english and german
+    I18n.available_locales = [:en, :de]
+    # set default locale to english
+    config.i18n.default_locale = :en
   end
 end

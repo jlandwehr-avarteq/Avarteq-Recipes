@@ -1,5 +1,5 @@
 <% if user_signed_in? %>
   <li class="<%= is_active?(user_profile_show_editable_path)%>">
-    <%= link_to('Profile', user_profile_show_editable_path) %>
+    <%= link_to( t('header.profile'), user_profile_show_editable_path) %>
   </li>
 <% end %>

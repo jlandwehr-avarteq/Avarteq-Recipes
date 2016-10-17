@@ -32,6 +32,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Unicorn as the app server
 # gem 'unicorn'
 
+# Allows internaitonalization of the websites content
+gem 'rails-i18n', '~> 4.0.0'
+
 #Authentification
 gem 'devise'
 
