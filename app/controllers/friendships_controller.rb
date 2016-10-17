@@ -1,14 +1,11 @@
 class FriendshipsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_friend, only: %i(friend unfriend)
+  before_action :set_friend, only: %i(unfriend)
 
-  def friend
-  end
+  #def friend
+  #end
 
   def friends
-    #u = User.where(username: 'Blob').first
-    #current_user.friend_request(u)
-    #u.accept_request(current_user)
     @friends = current_user.friends
   end
 
@@ -34,25 +31,29 @@ class FriendshipsController < ApplicationController
     end
   end
 
+  # accept a friend request
   def accept_friend
-     friend = User.find(params[:id])
+    friend = User.find(params[:id])
 
-    #check if there is a friend request and if they are not friends, yet
-    #TODO unless current_user.friends_with?(@friend) && current_user.pending_friends.exclude(@friend)
+    if current_user.pending_friends.include?(friend)
       current_user.accept_request(friend)
        redirect_to friends_path, notice: 'Friend accepted!'
-    #else
-      #flash[:error] = 'There is not friend request or you are already friends'
-      #redirect_to friends_path
-    #end
+    else
+      flash[:error] = 'There is no friend request or you are already friends'
+      redirect_to friends_path
+    end
   end
 
   def decline_friend
-    #TODO
-     friend = User.find(params[:id])
-     current_user.decline_request(friend)
-       redirect_to friends_path, notice: 'Friend declined!'
+    friend = User.find(params[:id])
 
+    if current_user.pending_friends.include?(friend)
+       current_user.decline_request(friend)
+       redirect_to friends_path, notice: 'Friend declined!'
+    else
+      flash[:error] = 'Friend could not be declined!'
+      redirect_to friends_path
+    end
   end
 
   private
