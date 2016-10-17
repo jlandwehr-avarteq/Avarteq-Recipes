@@ -232,5 +232,13 @@ de:
     groups: "Gruppen"
     my_recipes: "Meine Rezepte"
     home: "Startseite"
+  user:
+    username: "Benutzername"
+    first_name: "Vorname"
+    last_name: "Nachname"
+    info: "Info"
+    accept: "Akzeptieren"
+    decline: "Ablehnen"
+    email: "E-Mail"
 
 

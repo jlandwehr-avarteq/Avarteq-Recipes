@@ -226,4 +226,12 @@ en:
     groups: "Groups"
     my_recipes: "My recipes"
     home: "Home"
+  user:
+    username: "Username"
+    first_name: "First name"
+    last_name: "Last name"
+    info: "Info"
+    accept: "Accept"
+    decline: "Decline"
+    email: "E-Mail"
 

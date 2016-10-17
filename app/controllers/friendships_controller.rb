@@ -24,12 +24,13 @@ class FriendshipsController < ApplicationController
   # send a friend request using the username
   def add_friend
     friend = User.where(username: params[:username]).first
-    if friend.exists?
-      current_user.friend_request(friend)
-      redirect_to friends_path, notice: 'Friend request sent'
-    else
+    if friend.nil?
       flash[:error] = 'Username does not exist!'
       redirect_to friends_path
+    else
+      #IDK why it needs to be this way around -.-
+      friend.friend_request(current_user)
+      redirect_to friends_path, notice: 'Friend request sent'
     end
   end
 

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'user_profile/show_to_others/:id', to: 'user_profile#show_to_others'
+  get 'user_profile/show_to_others/:id', to: 'user_profile#show_to_others', as: 'userinformation'
 
   get 'user_profile/show_editable'
 
@@ -16,5 +16,7 @@ Rails.application.routes.draw do
   get 'accept_friend/:id', to: "friendships#accept_friend", as:'accept_friend'
 
   get 'decline_friend/:id', to: "friendships#decline_friend", as:'decline_friend'
+
+ devise_for :users, controllers: { registrations: "registrations" }
 
 end

@@ -1,0 +1,7 @@
+<% if user_signed_in? %>
+  <li class="<%= is_active?(friends_path) %>"> <%= link_to friends_path do %>
+    <%= t('header.friends') %>
+    <span class="<%= render_badge %>"> <%= current_user.pending_friends.count %></span>
+  <% end %>
+  </li>
+<% end %>

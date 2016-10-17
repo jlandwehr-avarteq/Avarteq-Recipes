@@ -10,11 +10,9 @@
 <table class="table table-striped">
     <thead>
       <tr>
-        <th>I18n.t 'Username'</th>
-        <th>First name</th>
-        <th>Last name</th>
-        <th>Info</th>
-        <th>Unfriend</th>
+        <%= render 'table_header' %>
+        <th class="col-md-1">Unfriend</th>
+        <th class="col-md-1"></th>
       </tr>
     </thead>
     <tbody>
@@ -23,8 +21,9 @@
           <td><%= friend.username %></td>
           <td><%= friend.first_name %></td>
           <td><%= friend.last_name %></td>
-          <td></td>
+          <td><%= render_friend_into_button(friend) %></td>
           <td><%= render_unfriend_button(friend) %></td>
+          <td></td>
         </tr>
       <% end %>
     </tbody>
@@ -45,12 +44,9 @@
 <table class="table table-striped">
     <thead>
       <tr>
-        <th>I18n.t 'Username'</th>
-        <th>First name</th>
-        <th>Last name</th>
-        <th>Info</th>
-        <th>Accept</th>
-         <th>Deny</th>
+        <%= render 'table_header' %>
+        <th class="col-md-1">Accept</th>
+         <th class="col-md-1">Deny</th>
       </tr>
     </thead>
     <tbody>
@@ -59,8 +55,9 @@
           <td><%= friend.username %></td>
           <td><%= friend.first_name %></td>
           <td><%= friend.last_name %></td>
-          <td><%= link_to 'Accept', accept_friend_path(friend) %></td>
-          <td><%= link_to 'Decline', decline_friend_path(friend) %></td>
+          <td><%= render_friend_into_button(friend) %></td>
+          <td><%= render_friend_accept_button(friend) %></td>
+          <td><%= render_friend_decline_button(friend) %></td>
         </tr>
       <% end %>
     </tbody>
@@ -78,10 +75,8 @@
 <table class="table table-striped">
     <thead>
       <tr>
-        <th>I18n.t 'Username'</th>
-        <th>First name</th>
-        <th>Last name</th>
-        <th>Info</th>
+        <%= render 'table_header' %>
+        <th class="col-md-2"></th>
       </tr>
     </thead>
     <tbody>
@@ -90,6 +85,7 @@
           <td><%= friend.username %></td>
           <td><%= friend.first_name %></td>
           <td><%= friend.last_name %></td>
+          <td><%= render_friend_into_button(friend) %></td>
           <td></td>
         </tr>
       <% end %>
