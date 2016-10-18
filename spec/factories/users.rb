@@ -6,6 +6,7 @@ FactoryGirl.define do
     email                 FFaker::Internet.email
     password              "password"
     password_confirmation "password"
+    confirmed_at Date.today
   end
 
     factory :user_wrong_pw, parent: :user do |u|

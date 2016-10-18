@@ -243,15 +243,15 @@ de:
     email: "E-Mail"
   friendships:
     notices:
-      sent: "Friend request sent"
-      removed: "Friend successfully removed"
-      accepted: "Friend accepted!"
-      declined: "Friend declined!"
+      sent: "Freundesanfrage versendet"
+      removed: "Freund erfolgreich entfernt"
+      accepted: "Freundschaftsanfrage akzeptiert!"
+      declined: "Freundschaftsanfrage abgelehnt!"
     alerts:
-      not_exist: "Username does not exist!"
-      not_unfriended: "User could not be unfriended"
-      no_friend_request: "There is no friend request or you are already friends"
-      not_declined: "Friend could not be declined!"
-      not_friends: "You are not a friend of %{ friend }, please add him first!"
+      not_exist: "Benutzername existiert nicht!"
+      not_unfriended: "Benutzer konnte nicht entfernt werden"
+      no_friend_request: "Es gibt keine Freundschaftsanfrage, oder Sie sind bereits befreundet"
+      not_declined: "Freundschaftsanfrage konnte nicht abgelehnt werden"
+      not_friends: "Sie sind noch nicht mit %{ friend } befreundet. Senden sie zuerst eine Freundschaftsanfrage!"
 
 
