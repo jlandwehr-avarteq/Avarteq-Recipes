@@ -10,21 +10,20 @@ class FriendshipsController < ApplicationController
     friend = User.where(username: params[:user][:username]).first
 
     if friend.nil?
-      flash[:error] = 'Username does not exist!'
-      redirect_to friendships_path
+      redirect_to friendships_path, alert: t('friendships.alerts.not_exist')
     else
-      #IDK why it needs to be this way around -.-
+      # TOFIX - Due to used gem, it needs to be `friend.request(current_user)` instead of `current_user.request(friend)`.
+      # If time allows it, fix it or remove the plugin to do it ourself for a better usecase and control over the application.
       friend.friend_request(current_user)
-      redirect_to friendships_path, notice: 'Friend request sent'
+      redirect_to friendships_path, notice: t('friendships.notices.sent')
     end
   end
 
   def destroy
     if current_user.remove_friend(@friend)
-      redirect_to friendships_path, notice: 'Friend successfully removed'
+      redirect_to friendships_path, notice: t('friendships.notices.removed')
     else
-      flash[:error] = "#{ @friend.username } could not be unfriended"
-      redirect_to friendshipss_path
+      redirect_to friendshipss_path, alert: t('friendships.alerts.not_unfriended')
     end
   end
 
@@ -33,10 +32,9 @@ class FriendshipsController < ApplicationController
     friend = get_friend
     if current_user.pending_friends.include?(friend)
       current_user.accept_request(friend)
-       redirect_to friendships_path, notice: 'Friend accepted!'
+      redirect_to friendships_path, notice: t('friendships.notices.accepted')
     else
-      flash[:error] = 'There is no friend request or you are already friends'
-      redirect_to friendships_path
+      redirect_to friendships_path, alert: t('friendships.alerts.no_friend_request')
     end
   end
 
@@ -44,10 +42,11 @@ class FriendshipsController < ApplicationController
     friend = get_friend
     if current_user.pending_friends.include?(friend)
        current_user.decline_request(friend)
-       redirect_to friendships_path, notice: 'Friend declined!'
+       redirect_to friendships_path, notice: t('friendships.notices.declined')
     else
       flash[:error] = 'Friend could not be declined!'
-      redirect_to friendships_path
+      redirect_to friendships_path, alert: t('friendships.alerts.not_declined')
+
     end
   end
 
@@ -58,9 +57,7 @@ class FriendshipsController < ApplicationController
     if current_user.friends_with?(friend)
       @friend = friend
     else
-      flash[:error] = "You are not a friend of #{ friend.username }, please add him first!"
-      #TODO change path
-      redirect_to root_path
+      redirect_to friendships_path, alert: t('friendships.alerts.not_friends', :friend => @friend.username)
     end
   end
 

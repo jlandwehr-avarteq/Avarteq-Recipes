@@ -239,6 +239,19 @@ de:
     info: "Info"
     accept: "Akzeptieren"
     decline: "Ablehnen"
+    unfriend: "Entfernen"
     email: "E-Mail"
+  friendships:
+    notices:
+      sent: "Friend request sent"
+      removed: "Friend successfully removed"
+      accepted: "Friend accepted!"
+      declined: "Friend declined!"
+    alerts:
+      not_exist: "Username does not exist!"
+      not_unfriended: "User could not be unfriended"
+      no_friend_request: "There is no friend request or you are already friends"
+      not_declined: "Friend could not be declined!"
+      not_friends: "You are not a friend of %{ friend }, please add him first!"
 
 
