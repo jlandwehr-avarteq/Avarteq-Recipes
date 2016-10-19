@@ -5,7 +5,7 @@ module FriendshipsHelper
 
   #TODO change paths
   def render_friend_into_button(friend)
-     link_to "<i class='glyphicon glyphicon-user'></i>".html_safe, user_profil_show_path(friend), class: 'btn btn-info'
+     link_to "<i class='glyphicon glyphicon-user'></i>".html_safe, user_path(friend), class: 'btn btn-info'
   end
 
   def render_friend_accept_button(friend)

@@ -1,5 +1,5 @@
 <% if user_signed_in? %>
-  <li class="<%= is_active?(user_profil_edit_path(current_user))%>">
-    <%= link_to( t('header.profile'), user_profil_edit_path(current_user)) %>
+  <li class="<%= is_active?(edit_user_path(current_user))%>">
+    <%= link_to( t('header.profile'), edit_user_path(current_user)) %>
   </li>
 <% end %>

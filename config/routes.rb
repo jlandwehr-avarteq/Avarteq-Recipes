@@ -1,10 +1,4 @@
 Rails.application.routes.draw do
-  #User show
-  get 'user_profile/show/:id', to: 'user_profile#show', as: 'user_profil/show'
-  #User edit
-  get 'user_profile/edit/:id', to: 'user_profile#edit', as: 'user_profil/edit'
-  resources :allergies
-  get 'user_profile/show_to_others/:id', to: 'user_profile#show_to_others'
 
   root 'page#welcome'
 
@@ -16,5 +10,9 @@ Rails.application.routes.draw do
   end
 
  devise_for :users, controllers: { registrations: "registrations" }
+
+ resources :users, only: [:show, :edit, :update]
+
+ resources :allergies
 
 end

@@ -227,6 +227,7 @@ en:
     my_recipes: "My recipes"
     home: "Home"
   user:
+    user: "User"
     username: "Username"
     first_name: "First name"
     last_name: "Last name"

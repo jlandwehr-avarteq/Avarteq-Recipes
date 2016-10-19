@@ -233,6 +233,7 @@ de:
     my_recipes: "Meine Rezepte"
     home: "Startseite"
   user:
+    user: "Benutzer"
     username: "Benutzername"
     first_name: "Vorname"
     last_name: "Nachname"

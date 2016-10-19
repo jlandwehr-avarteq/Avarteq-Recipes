@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+  has_many :user_allergy
+  has_many :allergies, through: :user_allergy
+
   #allows to create friendrequest
   # @mac sends a friend request to @dee
   #@mac.friend_request(@dee)
@@ -18,4 +21,5 @@ class User < ActiveRecord::Base
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates_uniqueness_of :username
+
 end
