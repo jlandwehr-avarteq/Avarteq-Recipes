@@ -24,6 +24,11 @@
   background-color: #267a1a;
 }
 
+//Garantees that text is not overlapped by the header
+body {
+  padding-top: 70px;
+}
+
 /*______________ Flash Messages ______________*/
 
 .alert-error {

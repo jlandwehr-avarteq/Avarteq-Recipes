@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-6 col-md-offset-4 col-lg-6 col-lg-offset-4">
       <h3> <%= @user.username.capitalize %>'s user information </h3>
     </div>
   </div>
@@ -8,18 +8,21 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-6 col-md-offset-4 col-lg-6 col-lg-offset-4">
       <h3> <%= @user.username.capitalize %>'s personal information </h3>
     </div>
-    <div class="col-md-12">
-      <%= render 'show_user' %>
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4">
+        <%= render 'show_user' %>
+      </div>
     </div>
   </div>
+</div>
 </div>
 
 <div class="container">
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-6 col-md-offset-4 col-lg-6 col-lg-offset-4">
       <h3> <%= @user.username.capitalize %>'s food restrictions </h3>
       <!-- Display user's restriction -->
     </div>
@@ -28,16 +31,21 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4">
       <h3> <%= @user.username.capitalize %>'s food allergies </h3>
       <!-- Display user's allergies -->
+      <ul class="list-group">
+        <% @user.allergies.each do |allergy| %>
+          <li class="list-group-item"><%= allergy.name %></li>
+        <% end %>
+      </ul>
     </div>
   </div>
 </div>
 
 <div class="container">
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-6 col-md-offset-4 col-lg-6 col-lg-offset-4">
       <h3> <%= @user.username.capitalize %>'s food rating</h3>
       <!-- Display user's food rating results-->
     </div>

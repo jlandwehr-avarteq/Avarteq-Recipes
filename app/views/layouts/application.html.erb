@@ -7,12 +7,20 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
+    <%= render 'layouts/header_nav' %>
     <div class container>
       <div class="row">
-        <%= render 'layouts/header_nav' %>
+        <div class="col-lg-12">
+          <%= render 'layouts/messages' %>
+        </div>
       </div>
-      <%= render 'layouts/messages' %>
-      <%= yield %>
+      <div class container>
+        <div class="row">
+        <div class="col-lg-12">
+          <%= yield %>
+        </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
