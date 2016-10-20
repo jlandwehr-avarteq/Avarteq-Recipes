@@ -238,6 +238,10 @@ en:
     unfriend: "Unfriend"
     email: "E-Mail"
   friendships:
+    headers:
+      my_friends: "My friends"
+      pending_friends: "Pending friend requests"
+      my_requests: "My friend requests"
     notices:
       sent: "Friend request sent"
       removed: "Friend successfully removed"
@@ -249,4 +253,6 @@ en:
       no_friend_request: "There is no friend request or you are already friends"
       not_declined: "Friend could not be declined!"
       not_friends: "You are not a friend of %{ friend }, please add him first!"
-
+  allergies:
+      update_success: "Allergies successfully updated."
+      update_fail: "Allergies could not be updated."

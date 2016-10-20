@@ -14,9 +14,12 @@ class UsersController < ApplicationController
     #TODO notices and alerts
     @user = current_user
     set_allergies_from_params
-    @user.save
-    redirect_to edit_user_path(@user)
+    if @user.save
+    redirect_to edit_user_path(@user), notice: t('allergies.update_success')
+    else
 
+    redirect_to edit_user_path(@user), alert: t('allergies.update_fail')
+    end
   end
 
   private

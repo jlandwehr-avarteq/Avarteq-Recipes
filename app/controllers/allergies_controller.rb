@@ -28,7 +28,7 @@ class AllergiesController < ApplicationController
 
     respond_to do |format|
       if @allergy.save
-        format.html { redirect_to @allergy, notice: 'Allergy was successfully created.' }
+        format.html { redirect_to new_allergy_path, notice: 'Allergy was successfully created.' }
         format.json { render :show, status: :created, location: @allergy }
       else
         format.html { render :new }
