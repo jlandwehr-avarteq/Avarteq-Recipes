@@ -13,6 +13,6 @@ Rails.application.routes.draw do
 
  resources :users, only: [:show, :edit, :update]
 
- resources :allergies, only: [:new, :create]
+ resources :allergies
 
 end

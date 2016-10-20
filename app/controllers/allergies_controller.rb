@@ -1,6 +1,9 @@
 class AllergiesController < ApplicationController
   before_action :set_allergy, only: [:show, :edit, :update, :destroy]
 
+  #TODO insert admin functionality
+  #Only admins should be allowed to access allergies
+
   # GET /allergies
   # GET /allergies.json
   def index

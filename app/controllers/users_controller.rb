@@ -11,7 +11,6 @@ class UsersController < ApplicationController
   end
 
   def update
-    #TODO notices and alerts
     @user = current_user
     set_allergies_from_params
     if @user.save
