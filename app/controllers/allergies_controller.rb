@@ -34,7 +34,7 @@ class AllergiesController < ApplicationController
         format.html { redirect_to new_allergy_path, notice: t('allergies.created') }
         format.json { render :show, status: :created, location: @allergy }
       else
-        format.html { render :new }
+        format.html { render :new, alert: t('errors.messages.empty') }
         format.json { render json: @allergy.errors, status: :unprocessable_entity }
       end
     end
