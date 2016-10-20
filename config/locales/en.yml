@@ -226,6 +226,7 @@ en:
     groups: "Groups"
     my_recipes: "My recipes"
     home: "Home"
+    sign_up: "Sign up"
   user:
     user: "User"
     username: "Username"

@@ -232,6 +232,7 @@ de:
     groups: "Gruppen"
     my_recipes: "Meine Rezepte"
     home: "Startseite"
+    sign_up: "Registrierung"
   user:
     user: "Benutzer"
     username: "Benutzername"
