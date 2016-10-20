@@ -3,7 +3,6 @@ module FriendshipsHelper
     link_to "<i class='glyphicon glyphicon-remove-circle'></i>".html_safe, friendship_path(friend), method: :delete, class: 'btn btn-danger'
   end
 
-  #TODO change paths
   def render_friend_into_button(friend)
      link_to "<i class='glyphicon glyphicon-user'></i>".html_safe, user_path(friend), class: 'btn btn-info'
   end

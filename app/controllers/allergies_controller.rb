@@ -31,7 +31,7 @@ class AllergiesController < ApplicationController
 
     respond_to do |format|
       if @allergy.save
-        format.html { redirect_to new_allergy_path, notice: 'Allergy was successfully created.' }
+        format.html { redirect_to new_allergy_path, notice: t('allergies.created') }
         format.json { render :show, status: :created, location: @allergy }
       else
         format.html { render :new }
@@ -45,7 +45,7 @@ class AllergiesController < ApplicationController
   def update
     respond_to do |format|
       if @allergy.update(allergy_params)
-        format.html { redirect_to @allergy, notice: 'Allergy was successfully updated.' }
+        format.html { redirect_to @allergy, notice: t('allergies.update_success') }
         format.json { render :show, status: :ok, location: @allergy }
       else
         format.html { render :edit }
@@ -59,7 +59,7 @@ class AllergiesController < ApplicationController
   def destroy
     @allergy.destroy
     respond_to do |format|
-      format.html { redirect_to allergies_url, notice: 'Allergy was successfully destroyed.' }
+      format.html { redirect_to allergies_url, notice: t('allergies.destroy_success') }
       format.json { head :no_content }
     end
   end

@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_many :user_allergy
+  has_many :user_allergy, dependent: :destroy
   has_many :allergies, through: :user_allergy
 
   #allows to create friendrequest

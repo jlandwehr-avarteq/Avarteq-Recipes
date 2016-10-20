@@ -149,6 +149,8 @@ de:
       create: "%{model} erstellen"
       submit: "%{model} speichern"
       update: "%{model} aktualisieren"
+    prompts:
+      delete: "Wollen Sie %{name} wirklich löschen?"
   number:
     currency:
       format:
@@ -223,11 +225,14 @@ de:
     buttons:
       edit: "Editieren"
       submit: "Bestätigen"
+      destroy: "Löschen"
+      new: "Neu"
   header:
     recipes: "Recipes"
     login: "Login"
     logout: "Logout"
     friends: "Freunde"
+    allergies: "Allergien"
     profil: "Profil"
     groups: "Gruppen"
     my_recipes: "Meine Rezepte"
@@ -261,7 +266,15 @@ de:
       not_declined: "Freundschaftsanfrage konnte nicht abgelehnt werden"
       not_friends: "Sie sind noch nicht mit %{ friend } befreundet. Senden sie zuerst eine Freundschaftsanfrage!"
   allergies:
-      update_success: "Allergien wurden aktualisiert."
-      update_fail: "Allergien wurden nicht aktualisiert."
+    allergy: "Allergie"
+    add: "Wollen Sie eine neue Allergie hinzufügen?"
+    allergies_header: "Allergien"
+    edit_allergy: "Allergie bearbeiten"
+    add_allergy: "Allergy hinzufügen"
+    name: "Name"
+    update_success: "Allergien wurden aktualisiert."
+    update_fail: "Allergien wurden nicht aktualisiert."
+    created: "Allergie wurde erfolgreich erstellt."
+    destroy_success: "Allergie wurde erfolgreich entfernt."
 
 

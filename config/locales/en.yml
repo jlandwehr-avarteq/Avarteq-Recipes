@@ -151,6 +151,8 @@ en:
       create: Create %{model}
       submit: Save %{model}
       update: Update %{model}
+    prompts:
+      delete: "Do you really want to delete %{name}"
   number:
     currency:
       format:
@@ -217,11 +219,14 @@ en:
     buttons:
       edit: "Edit"
       submit: "Submit"
+      destroy: "Delete"
+      new: "New"
   header:
     recipes: "Recipes"
     login: "Login"
     logout: "Logout"
     friends: "Friends"
+    allergies: "Allergies"
     profil: "Profil"
     groups: "Groups"
     my_recipes: "My recipes"
@@ -254,5 +259,13 @@ en:
       not_declined: "Friend could not be declined!"
       not_friends: "You are not a friend of %{ friend }, please add him first!"
   allergies:
-      update_success: "Allergies successfully updated."
-      update_fail: "Allergies could not be updated."
+    allergy: "Allergy"
+    add: "Do you want to add a new allergy?"
+    allergies_header: "Allergies"
+    edit_allergy: "Edit Allergy"
+    add_allergy: "Add Allergy"
+    name: "Name"
+    update_success: "Allergies successfully updated."
+    update_fail: "Allergies could not be updated."
+    created: "Allergy was successfully created."
+    destroy_success: "Allergy was successfully destroyed."
