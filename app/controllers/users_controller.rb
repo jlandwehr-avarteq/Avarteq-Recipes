@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 
   def update
     @user = current_user
-    set_allergies_from_params
+    @user.allergies = get_allergies_from_params
     if @user.save
     redirect_to edit_user_path(@user), notice: t('allergies.update_success')
     else
@@ -27,7 +27,7 @@ class UsersController < ApplicationController
     @allergies = Allergy.all
   end
 
-  def set_allergies_from_params
-    @user.allergies = Allergy.where(id: params[:user][:allergy_ids])
+  def get_allergies_from_params
+    Allergy.where(id: params[:user][:allergy_ids])
   end
 end
