@@ -153,6 +153,17 @@ en:
       update: Update %{model}
     prompts:
       delete: "Do you really want to delete %{name}"
+<<<<<<< dcee26b0d067e90542db8c2b9a0f63c670080400
+=======
+    alerts:
+      create: "%{name} could not ne created"
+      update: "%{name} could not be updated"
+      destroy: "%{name}  could not be destroyed"
+    notices:
+      create: "%{name} was successfully created."
+      update: "%{name}  was successfully updated."
+      destroy: "%{name}  was successfully destroyed."
+>>>>>>> Style ingredients views and adjust ingredients views
   number:
     currency:
       format:
@@ -232,6 +243,7 @@ en:
     my_recipes: "My recipes"
     home: "Home"
     sign_up: "Sign up"
+    ingredients: "Ingredients"
   user:
     user: "User"
     username: "Username"
@@ -269,3 +281,14 @@ en:
     update_fail: "Allergies could not be updated."
     created: "Allergy was successfully created."
     destroy_success: "Allergy was successfully destroyed."
+  ingredients:
+    ingredient: "Ingredient"
+    ingredients: "Ingredients"
+    add: "Add a new ingredient"
+    add_header: "New ingredient"
+    edit: "Edit ingredient"
+    alerts:
+      create: "Ingredient could not ne created, the ingredient might already exist"
+      update: "Ingredient could not be updated, the ingredient might already exist"
+  misc:
+    name: "Name"

@@ -151,6 +151,14 @@ de:
       update: "%{model} aktualisieren"
     prompts:
       delete: "Wollen Sie %{name} wirklich löschen?"
+    alerts:
+      create: "%{name} konnte nicht erstellt werden."
+      update: "%{name} konnte nicht aktualisiert werden."
+      destroy: "%{name} konnte nicht entfernt werden."
+    notices:
+      create: "%{name} wurde erfolgreich erstellt."
+      update: "%{name} wurde erfolgreich aktualisiert."
+      destroy: "%{name} wurde erfolgreich entfernt."
   number:
     currency:
       format:
@@ -238,6 +246,7 @@ de:
     my_recipes: "Meine Rezepte"
     home: "Startseite"
     sign_up: "Registrierung"
+    ingredients: "Zutaten"
   user:
     user: "Benutzer"
     username: "Benutzername"
@@ -276,5 +285,14 @@ de:
     update_fail: "Allergien wurden nicht aktualisiert."
     created: "Allergie wurde erfolgreich erstellt."
     destroy_success: "Allergie wurde erfolgreich entfernt."
-
-
+  ingredients:
+    ingredient: "Zutat"
+    ingredients: "Zutaten"
+    add: "Füge eine neue Zutat hinzu"
+    add_header: "Neue Zutat"
+    edit: "Zutat editieren"
+    alerts:
+      create: "Zutat konnte nicht hinzugefügt werden, eventuell ist sie bereits vorhanden."
+      update: "Zutat konnte nicht aktualisiert werden, eventuell ist sie bereits vorhanden."
+  misc:
+    name: "Name"

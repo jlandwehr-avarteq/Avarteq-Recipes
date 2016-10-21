@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   root 'page#welcome'
 
   resources :friendships, only: [:index, :create, :destroy] do
@@ -12,7 +11,6 @@ Rails.application.routes.draw do
  devise_for :users, controllers: { registrations: "registrations" }
 
  resources :users, only: [:show, :edit, :update]
-
  resources :allergies
-
+ resources :ingredients
 end
