@@ -11,7 +11,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161019090154) do
+ActiveRecord::Schema.define(version: 20161024072532) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -33,8 +34,9 @@ ActiveRecord::Schema.define(version: 20161019090154) do
 
   create_table "ingredients", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.boolean  "is_foodcategory", default: false
   end
 
   add_index "ingredients", ["name"], name: "index_ingredients_on_name", unique: true, using: :btree
@@ -48,6 +50,17 @@ ActiveRecord::Schema.define(version: 20161019090154) do
 
   add_index "user_allergies", ["allergy_id"], name: "index_user_allergies_on_allergy_id", using: :btree
   add_index "user_allergies", ["user_id"], name: "index_user_allergies_on_user_id", using: :btree
+
+  create_table "user_ingredients", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "ingredient_id"
+    t.integer  "rating",        default: 3
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  add_index "user_ingredients", ["ingredient_id"], name: "index_user_ingredients_on_ingredient_id", using: :btree
+  add_index "user_ingredients", ["user_id"], name: "index_user_ingredients_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "username"
@@ -73,4 +86,6 @@ ActiveRecord::Schema.define(version: 20161019090154) do
 
   add_foreign_key "user_allergies", "allergies"
   add_foreign_key "user_allergies", "users"
+  add_foreign_key "user_ingredients", "ingredients"
+  add_foreign_key "user_ingredients", "users"
 end

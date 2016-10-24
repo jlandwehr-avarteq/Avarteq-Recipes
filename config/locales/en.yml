@@ -153,8 +153,6 @@ en:
       update: Update %{model}
     prompts:
       delete: "Do you really want to delete %{name}"
-<<<<<<< dcee26b0d067e90542db8c2b9a0f63c670080400
-=======
     alerts:
       create: "%{name} could not ne created"
       update: "%{name} could not be updated"
@@ -163,7 +161,6 @@ en:
       create: "%{name} was successfully created."
       update: "%{name}  was successfully updated."
       destroy: "%{name}  was successfully destroyed."
->>>>>>> Style ingredients views and adjust ingredients views
   number:
     currency:
       format:
@@ -292,3 +289,4 @@ en:
       update: "Ingredient could not be updated, the ingredient might already exist"
   misc:
     name: "Name"
+    foodcategory: "Category"

@@ -296,3 +296,4 @@ de:
       update: "Zutat konnte nicht aktualisiert werden, eventuell ist sie bereits vorhanden."
   misc:
     name: "Name"
+    foodcategory: "Kategorie"
