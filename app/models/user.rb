@@ -22,4 +22,14 @@ class User < ActiveRecord::Base
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates_uniqueness_of :username
+  accepts_nested_attributes_for :user_ingredients
+
+  after_create :set_user_ingredients
+
+  def set_user_ingredients
+    user_ingredients = Ingredient.where(is_foodcategory: true)
+    user_ingredients.each do |ingredient|
+      UserIngredient.create(user_id: self.id, ingredient_id: ingredient.id)
+    end
+  end
 end

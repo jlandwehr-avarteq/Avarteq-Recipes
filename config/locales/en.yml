@@ -290,3 +290,4 @@ en:
   misc:
     name: "Name"
     foodcategory: "Category"
+    liking: "Liking"
