@@ -1,6 +1,9 @@
 class User < ActiveRecord::Base
   has_many :user_allergy, dependent: :destroy
   has_many :allergies, through: :user_allergy
+  has_many :user_events, dependent: :destroy
+  has_many :events, through: :user_events
+  has_many :events, class_name: "Event", foreign_key: "creator_id"
 
   has_many :user_ingredients, dependent: :destroy
   has_many :ingredients, through: :user_ingredients
@@ -18,10 +21,11 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :trackable, :validatable
 
-  validates :username, presence: true
-  validates :first_name, presence: true
-  validates :last_name, presence: true
+  validates :username,    presence: true
+  validates :first_name,  presence: true
+  validates :last_name,   presence: true
   validates_uniqueness_of :username
+
   accepts_nested_attributes_for :user_ingredients
 
   after_create :set_user_ingredients

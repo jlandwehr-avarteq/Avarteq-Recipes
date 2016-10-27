@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   root 'page#welcome'
 
   resources :friendships, only: [:index, :create, :destroy] do
@@ -13,4 +14,5 @@ Rails.application.routes.draw do
  resources :users, only: [:show, :edit, :update]
  resources :allergies
  resources :ingredients
+ resources :events
 end

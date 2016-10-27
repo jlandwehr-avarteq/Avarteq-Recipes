@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< e30f2280a5683fb568f7edc2a39f5a4ef022937e
 ActiveRecord::Schema.define(version: 20161024072532) do
+=======
+ActiveRecord::Schema.define(version: 20161026114339) do
+>>>>>>> Add events
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +25,19 @@ ActiveRecord::Schema.define(version: 20161024072532) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "events", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.date     "date"
+    t.time     "start_time"
+    t.time     "end_time"
+    t.integer  "creator_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "events", ["creator_id"], name: "index_events_on_creator_id", using: :btree
 
   create_table "friendships", force: :cascade do |t|
     t.integer  "friendable_id"
@@ -50,6 +67,16 @@ ActiveRecord::Schema.define(version: 20161024072532) do
 
   add_index "user_allergies", ["allergy_id"], name: "index_user_allergies_on_allergy_id", using: :btree
   add_index "user_allergies", ["user_id"], name: "index_user_allergies_on_user_id", using: :btree
+
+  create_table "user_events", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "event_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "user_events", ["event_id"], name: "index_user_events_on_event_id", using: :btree
+  add_index "user_events", ["user_id"], name: "index_user_events_on_user_id", using: :btree
 
   create_table "user_ingredients", force: :cascade do |t|
     t.integer  "user_id"
@@ -86,6 +113,8 @@ ActiveRecord::Schema.define(version: 20161024072532) do
 
   add_foreign_key "user_allergies", "allergies"
   add_foreign_key "user_allergies", "users"
+  add_foreign_key "user_events", "events"
+  add_foreign_key "user_events", "users"
   add_foreign_key "user_ingredients", "ingredients"
   add_foreign_key "user_ingredients", "users"
 end
