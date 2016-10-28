@@ -5,13 +5,10 @@ class Ingredient < ActiveRecord::Base
   validates :name, uniqueness: true
   validates :name, presence: true
 
-  #TODO needs to change relation after change is_foodcategory
   after_create :set_new_user_ingredients
   after_update :set_user_ingredients
 
   def set_user_ingredients
-    legacy_user_ingredients_relationships = []
-
     if self.is_foodcategory_changed?
       if self.is_foodcategory_was
         #legacy_user_ingredients_relationships << UserIngredient.where(ingredient_id: self.id)

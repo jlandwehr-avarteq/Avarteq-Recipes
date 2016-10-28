@@ -235,6 +235,7 @@ de:
       submit: "Bestätigen"
       destroy: "Löschen"
       new: "Neu"
+      reject: "Ablehnen"
   header:
     recipes: "Recipes"
     login: "Login"
@@ -307,3 +308,4 @@ de:
     start_time: "Startzeit"
     end_time: "Endzeit"
     add: "Wollen Sie ein neues Event hinzufügen?"
+    reject: "Event erfolgreich abgelehnt!"

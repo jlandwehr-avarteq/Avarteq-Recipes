@@ -229,6 +229,7 @@ en:
       submit: "Submit"
       destroy: "Delete"
       new: "New"
+      reject: "Reject"
   header:
     recipes: "Recipes"
     login: "Login"
@@ -300,3 +301,4 @@ en:
     start_time: "Start time"
     end_time: "End time"
     add: "Do you want to add a new event?"
+    reject: "Event successfully rejected!"

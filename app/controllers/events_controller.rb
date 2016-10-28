@@ -1,17 +1,17 @@
 class EventsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :set_event, only: [:show, :edit, :update, :destroy, :decline_event]
   before_action :set_friends, only: [:new, :edit, :create, :update]
 
   # GET /events
   # GET /events.json
   def index
     @my_events = Event.where(creator_id: current_user.id)
+    @invitations = []
     user_events = UserEvent.where(user_id: current_user.id)
 
-    @invitations = []
     user_events.each do |user_event|
-      @invitations << Event.where(id: user_event.event_id)
+      @invitations << Event.where("id = ? and creator_id != ?", user_event.event_id, current_user.id).first
     end
   end
 
@@ -34,6 +34,7 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     @event.creator_id = current_user.id
+    @event.users = get_invited_friends_from_params
 
     respond_to do |format|
       if @event.save
@@ -49,6 +50,8 @@ class EventsController < ApplicationController
   # PATCH/PUT /events/1
   # PATCH/PUT /events/1.json
   def update
+    @event.creator_id = current_user.id
+    @event.users = get_invited_friends_from_params
     respond_to do |format|
       if @event.update(event_params)
         format.html { redirect_to @event, notice: 'Event was successfully updated.' }
@@ -70,6 +73,16 @@ class EventsController < ApplicationController
     end
   end
 
+  def decline_event
+    debugger
+    user_event = UserEvent.where("event_id = ? and user_id = ?", @event.id, current_user.id).first
+
+    if user_event.destroy
+      redirect_to events_url, notice: t('event.reject')
+    end
+
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_event
@@ -83,5 +96,13 @@ class EventsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
       params.require(:event).permit(:title, :description, :date, :start_time, :end_time)
+    end
+
+    def invited_friends_params
+      params[:event][:id]
+    end
+
+    def get_invited_friends_from_params
+      User.where(id: invited_friends_params)
     end
 end

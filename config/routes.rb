@@ -15,4 +15,6 @@ Rails.application.routes.draw do
  resources :allergies
  resources :ingredients
  resources :events
+
+ delete 'decline_event/:id' => 'events#decline_event', as: 'decline_event'
 end

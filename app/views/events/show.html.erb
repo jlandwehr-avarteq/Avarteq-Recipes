@@ -1,29 +1,29 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="page-header">
+    <div class="row">
+      <h1 class="text-center"><%= @event.title %></h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 col-lg-6">
+      <p>
+        <%= @event.date.strftime("%d.%m.%Y") %>
+      </p>
+      <p>
+        <%= @event.start_time.strftime("%H:%M") %> - <%= @event.end_time.strftime("%H:%M") %>
+      </p>
+    </div>
+    <div class="col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-md-6 col-lg-6">
+      <p><%= @event.description %></p>
+    </div>
+  </div>
 
 <p>
-  <strong>Title:</strong>
-  <%= @event.title %>
+  <strong>Participants:</strong>
 </p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @event.description %>
-</p>
-
-<p>
-  <strong>Date:</strong>
-  <%= @event.date %>
-</p>
-
-<p>
-  <strong>Start time:</strong>
-  <%= @event.start_time %>
-</p>
-
-<p>
-  <strong>End time:</strong>
-  <%= @event.end_time %>
-</p>
+  <% @event.users.each do |user| %>
+    <p><%= user.username %></p>
+  <% end %>
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
