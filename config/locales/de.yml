@@ -299,6 +299,7 @@ de:
     name: "Name"
     foodcategory: "Kategorie"
     liking: "Favorisierung"
+    information: "Informationen"
   events:
     my_events: "Meine Events"
     invitations: "Einladungen"
@@ -308,4 +309,8 @@ de:
     start_time: "Startzeit"
     end_time: "Endzeit"
     add: "Wollen Sie ein neues Event hinzufügen?"
-    reject: "Event erfolgreich abgelehnt!"
+    reject"Participants": "Event erfolgreich abgelehnt!"
+    participants: "Teilnehmer"
+    add_event: "Neues Event hinzufügen"
+    edit_event: "Event editieren"
+    select_friends: "Lade deine freunde ein"

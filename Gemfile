@@ -41,6 +41,10 @@ gem 'devise'
 # Friendship funcitonality: e.g. send, accept, decline friendship request
 gem 'has_friendship'
 
+
+#Datepicker for selecting dates in a form
+gem 'bootstrap-datepicker-rails'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
